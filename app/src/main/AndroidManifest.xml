@@ -36,7 +36,8 @@
         <activity
             android:name=".Media.ListMediaActivity"
             android:label="@string/title_activity_list_media"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>
