@@ -3,4 +3,8 @@
 
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_list_music">ListMusicActivity</string>
+    <string name="title_activity_view_music">ViewMusicActivity</string>
+    <string name="title_activity_type_media">TypeMediaActivity</string>
+    <string name="title_activity_list_media">ListMediaActivity</string>
 </resources>

@@ -1,6 +1,7 @@
 package duan.it.thanh.duanmobile;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,7 +21,15 @@ public class WelcomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
-            Timer timer = new Timer();
-
+            MyTimerTask myTask = new MyTimerTask();
+            Timer myTimer = new Timer();
+            myTimer.schedule(myTask, 3000);
+        }
+    class MyTimerTask extends TimerTask {
+        public void run() {
+            Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
+            startActivity(intent);
+            finish();
+        }
     }
 }
