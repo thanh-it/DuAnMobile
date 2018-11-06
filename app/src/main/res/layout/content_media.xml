@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Media.MediaActivity"
+    android:padding="30dp"
+    tools:showIn="@layout/activity_media">
+        <android.support.v7.widget.SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/search_bar"
+            android:layout_below="@id/toolbar"
+            android:clickable="true"
+            app:defaultQueryHint="Tìm kiếm video"
+            android:layout_marginTop="20dp"
+            ></android.support.v7.widget.SearchView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_below="@id/search_bar"
+            android:orientation="vertical"
+            android:layout_centerInParent="true"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Phim ngắn"
+                android:id="@+id/mediaShort" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Phim hài hước"
+                android:id="@+id/mediaRelax" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Phim ca nhạc"
+                android:id="@+id/mediaMusic"/>
+        </LinearLayout>
+    </RelativeLayout>

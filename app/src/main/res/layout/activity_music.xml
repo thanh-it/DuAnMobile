@@ -4,11 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Music.ListMusicActivity">
-
-
-
-    <include layout="@layout/content_list_music" />
+    tools:context=".Music.MusicActivity">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+    <include layout="@layout/content_music" />
 
 
 </android.support.design.widget.CoordinatorLayout>

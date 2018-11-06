@@ -9,14 +9,15 @@ import android.view.View;
 
 import duan.it.thanh.duanmobile.R;
 
-public class ListMusicActivity extends AppCompatActivity {
+public class OnlineMusicActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_music);
+        setContentView(R.layout.activity_online_music);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
     }
 

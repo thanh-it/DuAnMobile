@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Music.OnlineMusicActivity"
+    android:padding="30dp"
+    tools:showIn="@layout/activity_online_music">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/title"
+        android:layout_centerHorizontal="true"
+        android:text="Nghe nhạc online"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_below="@+id/title"
+        android:id="@+id/musicV"
+        android:text="Nhạc Việt"
+        android:layout_height="wrap_content" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_below="@+id/musicV"
+        android:id="@+id/musicA"
+        android:text="Nhạc Âu - Mỹ"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

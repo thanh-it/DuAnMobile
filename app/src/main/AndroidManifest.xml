@@ -37,7 +37,23 @@
             android:name=".Media.ListMediaActivity"
             android:label="@string/title_activity_list_media"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".Music.MusicActivity"
+            android:label="@string/title_activity_music"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Media.MediaActivity"
+            android:label="@string/title_activity_media"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Music.OnlineMusicActivity"
+            android:label="@string/title_activity_online_music"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Music.TypeMusicActivity"
+            android:label="@string/title_activity_type_music"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

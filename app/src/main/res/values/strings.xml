@@ -7,4 +7,8 @@
     <string name="title_activity_view_music">ViewMusicActivity</string>
     <string name="title_activity_type_media">TypeMediaActivity</string>
     <string name="title_activity_list_media">ListMediaActivity</string>
+    <string name="title_activity_music">MusicActivity</string>
+    <string name="title_activity_media">MediaActivity</string>
+    <string name="title_activity_online_music">OnlineMusicActivity</string>
+    <string name="title_activity_type_music">TypeMusicActivity</string>
 </resources>
