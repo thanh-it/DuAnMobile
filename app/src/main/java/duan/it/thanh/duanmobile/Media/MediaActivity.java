@@ -6,6 +6,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 
 import duan.it.thanh.duanmobile.R;
 
@@ -17,7 +18,10 @@ public class MediaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_media);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        toolbar.setNavigationIcon(R.drawable.ic_bakc_24dp);
+        Button media_short = findViewById(R.id.mediaShort);
+        Button media_relax = findViewById(R.id.mediaRelax);
+        Button media_music = findViewById(R.id.mediaMusic);
     }
 
 }

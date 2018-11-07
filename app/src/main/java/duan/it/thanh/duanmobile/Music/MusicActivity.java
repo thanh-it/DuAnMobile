@@ -21,6 +21,7 @@ public class MusicActivity extends AppCompatActivity {
         setContentView(R.layout.activity_music);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        toolbar.setNavigationIcon(R.drawable.ic_bakc_24dp);
         Button show_list = findViewById(R.id.show_list);
         Button online_music = findViewById(R.id.musicOnline);
         show_list.setOnClickListener(new View.OnClickListener() {

@@ -17,6 +17,7 @@ public class ListMusicActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list_music);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        toolbar.setNavigationIcon(R.drawable.ic_bakc_24dp);
 
     }
 
