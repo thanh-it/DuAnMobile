@@ -1,5 +1,6 @@
 package duan.it.thanh.duanmobile.Media;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -22,6 +23,27 @@ public class MediaActivity extends AppCompatActivity {
         Button media_short = findViewById(R.id.mediaShort);
         Button media_relax = findViewById(R.id.mediaRelax);
         Button media_music = findViewById(R.id.mediaMusic);
+        media_short.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mediashort = new Intent(MediaActivity.this,MediaShortActivity.class);
+                startActivity(mediashort);
+            }
+        });
+        media_relax.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mediarelax = new Intent(MediaActivity.this,MediaRelaxActivity.class);
+                startActivity(mediarelax);
+            }
+        });
+        media_music.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mediamusic = new Intent(MediaActivity.this,MediaMusicActivity.class);
+                startActivity(mediamusic);
+            }
+        });
     }
 
 }
