@@ -11,4 +11,6 @@
     <string name="title_activity_media">MediaActivity</string>
     <string name="title_activity_online_music">OnlineMusicActivity</string>
     <string name="title_activity_type_music">TypeMusicActivity</string>
+    <string name="facebook_app_id">1967979516622090</string>
+    <string name="fb_login_protocol_scheme">fb1967979516622090</string>
 </resources>

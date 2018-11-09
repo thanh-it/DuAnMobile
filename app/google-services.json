@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "222629619578",
+    "firebase_url": "https://duanmobile-72896.firebaseio.com",
+    "project_id": "duanmobile-72896",
+    "storage_bucket": "duanmobile-72896.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:222629619578:android:153707501c24e6b3",
+        "android_client_info": {
+          "package_name": "duan.it.thanh.duanmobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "222629619578-d4j7t7adtk4j9nf04fb8va8l553bqrmr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "duan.it.thanh.duanmobile",
+            "certificate_hash": "1c86e3db91c203e8876aeabf691d67d84a23adc8"
+          }
+        },
+        {
+          "client_id": "222629619578-opm2j63ap6beecu75gbb77ff76s9jrud.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBt6gJZ16KzGzcjsD0bct_BVsomXhMJqFU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "222629619578-opm2j63ap6beecu75gbb77ff76s9jrud.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

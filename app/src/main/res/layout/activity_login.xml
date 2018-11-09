@@ -14,16 +14,17 @@
     android:background="@drawable/logo"
     android:id="@+id/logo"
     android:layout_centerHorizontal="true" />
-    <Button
+    <com.facebook.login.widget.LoginButton
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:id="@+id/loginfb"
         android:layout_below="@id/logo"
         android:layout_centerInParent="true"
         android:text="LOGIN WITH FACEBOOK"/>
-    <Button
+    <com.google.android.gms.common.SignInButton
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_height="80dp"
         android:layout_below="@id/loginfb"
         android:id="@+id/logingg"
         android:text="LOGIN WITH GOOGLE"/>
