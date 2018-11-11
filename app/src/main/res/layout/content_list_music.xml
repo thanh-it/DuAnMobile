@@ -18,11 +18,18 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/toolbar"
         android:layout_centerHorizontal="true"
+        android:textSize="25dp"
         android:text="Danh sách bài hát"
         android:id="@+id/title"/>
-    <ListView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_below="@id/title"
-        android:layout_height="wrap_content">
-    </ListView>
+        android:layout_height="match_parent"
+        android:layout_below="@id/title">
+        <ListView
+            android:layout_width="match_parent"
+            android:id="@+id/listmusicof"
+            android:layout_height="wrap_content">
+        </ListView>
+    </ScrollView>
+
 </RelativeLayout>
