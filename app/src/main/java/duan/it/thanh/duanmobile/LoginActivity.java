@@ -71,15 +71,10 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                         .build();
                 OptionalPendingResult<GoogleSignInResult> opr = Auth.GoogleSignInApi.silentSignIn(mGoogleApiClient);
                 if (opr.isDone()) {
-                    // If the user's cached credentials are valid, the OptionalPendingResult will be "done"
-                    // and the GoogleSignInResult will be available instantly.
                     Log.d(TAG, "Got cached sign-in");
                     GoogleSignInResult result = opr.get();
                     handleSignInResult(result);
                 } else {
-                    // If the user has not previously signed in on this device or the sign-in has expired,
-                    // this asynchronous branch will attempt to sign in the user silently.  Cross-device
-                    // single sign-on will occur in this branch.
                     showProgressDialog();
                     opr.setResultCallback(new ResultCallback<GoogleSignInResult>() {
                         @Override
@@ -92,7 +87,6 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                 signIn();
             }
         });
-
         FacebookSdk.sdkInitialize(getApplicationContext());
         callbackManager = CallbackManager.Factory.create();
         FbLogin = (LoginButton)findViewById(R.id.loginfb);
@@ -100,24 +94,20 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
             @Override
             public void onSuccess(LoginResult loginResult) {
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                Toast.makeText(LoginActivity.this,"Successful - Welcome to App Thanh-IT", Toast.LENGTH_LONG).show();
-                startActivity(intent);
-            }
 
+                Toast.makeText(LoginActivity.this,"Successful - Welcome to App Thanh-IT", Toast.LENGTH_LONG).show();
+
+            }
             @Override
             public void onCancel() {
                 Toast.makeText(LoginActivity.this,"Login attempt canceled.", Toast.LENGTH_LONG).show();
             }
-
             @Override
             public void onError(FacebookException e) {
                 Toast.makeText(LoginActivity.this,"Login attempt failed.", Toast.LENGTH_LONG).show();
             }
         });
     }
-
-
 
     @Override
     public void onStart() {
@@ -136,7 +126,6 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         }
     }
     // [END onActivityResult]
-
     // [START handleSignInResult]
     private void handleSignInResult(GoogleSignInResult result) {
         Log.d(TAG, "handleSignInResult:" + result.isSuccess());
@@ -144,20 +133,21 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             // Signed in successfully, show authenticated UI.
             GoogleSignInAccount acct = result.getSignInAccount();
             updateUI(true);
+            Intent i = new Intent(LoginActivity.this,MainActivity.class);
+            startActivity(i);
+            finish();
         } else {
             // Signed out, show unauthenticated UI.
             updateUI(false);
         }
     }
     // [END handleSignInResult]
-
     // [START signIn]
     private void signIn() {
         Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
     // [END signIn]
-
     // [START revokeAccess]
     private void revokeAccess() {
         Auth.GoogleSignInApi.revokeAccess(mGoogleApiClient).setResultCallback(
@@ -174,8 +164,6 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
     @Override
     public void onConnectionFailed(ConnectionResult connectionResult) {
-        // An unresolvable error has occurred and Google APIs (including Sign-In) will not
-        // be available.
         Log.d(TAG, "onConnectionFailed:" + connectionResult);
     }
 
@@ -184,16 +172,13 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             mProgressDialog = new ProgressDialog(this);
             mProgressDialog.setIndeterminate(true);
         }
-
         mProgressDialog.show();
     }
-
     private void hideProgressDialog() {
         if (mProgressDialog != null && mProgressDialog.isShowing()) {
             mProgressDialog.hide();
         }
     }
-
     private void updateUI(boolean signedIn) {
         if (signedIn) {
             findViewById(R.id.logingg).setVisibility(View.GONE);
