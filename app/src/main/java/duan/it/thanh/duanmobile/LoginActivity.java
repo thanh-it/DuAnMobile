@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
+import com.facebook.FacebookActivity;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
@@ -26,6 +27,7 @@ import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
 import com.facebook.Profile;
 import com.facebook.appevents.AppEventsLogger;
+import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.auth.api.Auth;
@@ -54,6 +56,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     private AccessToken mAccessToken;
     private static final String TAG = "LoginActivity";
     private static final int RC_SIGN_IN = 9001;
+    private static final int RC_FB_IN = 8001;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +64,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         AppEventsLogger.activateApp(this);
         setContentView(R.layout.activity_login);
         SignInButton btn_logingg = findViewById(R.id.logingg);
+
         btn_logingg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,6 +89,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                     });
                 }
                 signIn();
+                FbLogin.isEnabled();
             }
         });
         FacebookSdk.sdkInitialize(getApplicationContext());
@@ -94,9 +99,12 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
             @Override
             public void onSuccess(LoginResult loginResult) {
-
-                Toast.makeText(LoginActivity.this,"Successful - Welcome to App Thanh-IT", Toast.LENGTH_LONG).show();
-
+                Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                Toast.makeText(LoginActivity.this,"Welcome to App Thanh-IT", Toast.LENGTH_LONG).show();
+                finish();
+                LoginManager.getInstance().logOut();
             }
             @Override
             public void onCancel() {
@@ -109,21 +117,22 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         });
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-    }
-
     // [START onActivityResult]
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
+
         super.onActivityResult(requestCode, resultCode, data);
 
         // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
         if (requestCode == RC_SIGN_IN) {
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
             handleSignInResult(result);
+            Intent i = new Intent(LoginActivity.this,MainActivity.class);
+            startActivity(i);
+            Toast.makeText(LoginActivity.this,"Welcome to App Thanh-IT", Toast.LENGTH_LONG).show();
+            finish();
         }
+        callbackManager.onActivityResult(requestCode, resultCode, data);
     }
     // [END onActivityResult]
     // [START handleSignInResult]
@@ -133,9 +142,6 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             // Signed in successfully, show authenticated UI.
             GoogleSignInAccount acct = result.getSignInAccount();
             updateUI(true);
-            Intent i = new Intent(LoginActivity.this,MainActivity.class);
-            startActivity(i);
-            finish();
         } else {
             // Signed out, show unauthenticated UI.
             updateUI(false);
@@ -146,6 +152,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     private void signIn() {
         Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
         startActivityForResult(signInIntent, RC_SIGN_IN);
+
     }
     // [END signIn]
     // [START revokeAccess]

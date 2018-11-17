@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
+import duan.it.thanh.duanmobile.MainActivity;
 import duan.it.thanh.duanmobile.R;
 
 public class MediaActivity extends AppCompatActivity {
@@ -23,6 +24,12 @@ public class MediaActivity extends AppCompatActivity {
         Button media_short = findViewById(R.id.mediaShort);
         Button media_relax = findViewById(R.id.mediaRelax);
         Button media_music = findViewById(R.id.mediaMusic);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            }
+        });
         media_short.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -21,15 +21,11 @@
         android:textSize="25dp"
         android:text="Danh sách bài hát"
         android:id="@+id/title"/>
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/title">
 
         <ListView
             android:id="@+id/listmusicof"
             android:layout_width="match_parent"
+            android:layout_below="@id/title"
             android:layout_height="match_parent"></ListView>
-    </ScrollView>
 
 </RelativeLayout>

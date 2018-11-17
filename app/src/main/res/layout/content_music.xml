@@ -9,14 +9,26 @@
     android:padding="30dp"
     tools:showIn="@layout/activity_music">
 
-    <android.support.v7.widget.SearchView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/search_bar"
-        android:clickable="true"
-        app:defaultQueryHint="Tìm kiếm bài hát"
-        android:layout_marginTop="20dp"
-        ></android.support.v7.widget.SearchView>
+        android:layout_below="@id/toolbar"
+        android:layout_marginTop="40dp"
+        android:layout_height="wrap_content">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:id="@+id/search"
+            android:hint="Tìm kiếm video"
+            ></EditText>
+        <Button
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/search_button"
+            android:layout_alignRight="@id/search"
+            android:background="@drawable/search_btn"/>
+    </RelativeLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_below="@id/search_bar"

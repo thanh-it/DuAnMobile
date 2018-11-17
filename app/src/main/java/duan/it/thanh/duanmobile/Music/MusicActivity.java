@@ -11,6 +11,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.SearchView;
 
+import duan.it.thanh.duanmobile.MainActivity;
 import duan.it.thanh.duanmobile.R;
 
 public class MusicActivity extends AppCompatActivity {
@@ -22,6 +23,12 @@ public class MusicActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_bakc_24dp);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            }
+        });
         Button show_list = findViewById(R.id.show_list);
         Button online_music = findViewById(R.id.musicOnline);
         show_list.setOnClickListener(new View.OnClickListener() {

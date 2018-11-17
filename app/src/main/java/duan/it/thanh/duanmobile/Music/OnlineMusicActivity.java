@@ -18,6 +18,12 @@ public class OnlineMusicActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_bakc_24dp);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),MusicActivity.class));
+            }
+        });
         Button musicV = findViewById(R.id.musicV);
         Button musicA = findViewById(R.id.musicA);
         musicV.setOnClickListener(new View.OnClickListener() {
