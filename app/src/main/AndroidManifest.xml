@@ -54,10 +54,6 @@
             android:name=".Music.OnlineMusicActivity"
             android:label="@string/title_activity_online_music"
             android:theme="@style/AppTheme" />
-        <activity
-            android:name=".Music.TypeMusicActivity"
-            android:label="@string/title_activity_type_music"
-            android:theme="@style/AppTheme" />
         <activity android:name=".Music.ListOnlineVActivity" />
         <activity android:name=".Music.ListOnlineAActivity" />
         <activity android:name=".Media.MediaShortActivity" />
