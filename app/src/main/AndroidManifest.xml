@@ -83,6 +83,10 @@
         <activity
             android:name=".Music.PlayerActivity"
             android:label="@string/title_activity_player"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Music.open_music_am"
+            android:label="@string/title_activity_open_music_am"
             android:theme="@style/AppTheme"></activity>
     </application>
 
