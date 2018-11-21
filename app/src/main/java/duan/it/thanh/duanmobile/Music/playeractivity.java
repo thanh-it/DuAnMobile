@@ -25,7 +25,7 @@ import java.util.ArrayList;
 
 import duan.it.thanh.duanmobile.R;
 
-public class PlayerActivity extends AppCompatActivity implements Animation.AnimationListener {
+public class playeractivity extends AppCompatActivity implements Animation.AnimationListener {
     private MediaPlayer mMediaPlayer;
     ArrayList<File> mySongs;
     Button next, prev, play;

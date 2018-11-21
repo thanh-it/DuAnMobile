@@ -2,9 +2,6 @@ package duan.it.thanh.duanmobile.Music;
 
 import android.content.Context;
 import android.content.Intent;
-import android.media.AudioManager;
-import android.media.MediaPlayer;
-import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -15,16 +12,14 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.io.IOException;
 import java.util.List;
 
 import duan.it.thanh.duanmobile.R;
 import duan.it.thanh.duanmobile.dbdao.musicdao;
 import duan.it.thanh.duanmobile.model.music;
 
-public class ListOnlineAActivity extends AppCompatActivity {
+public class listonlineaactivity extends AppCompatActivity {
     ListView musica;
     musicdao musicDAO;
     @Override
@@ -37,10 +32,10 @@ public class ListOnlineAActivity extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),OnlineMusicActivity.class));
+                startActivity(new Intent(getApplicationContext(),onlinemusicactivity.class));
             }
         });
-        musicDAO = new musicdao(ListOnlineAActivity.this);
+        musicDAO = new musicdao(listonlineaactivity.this);
         musica = findViewById(R.id.lv_am);;
         final List<music> musicas = musicDAO.getmusicam();
         CustomPr customPr = new CustomPr(this,musicas);

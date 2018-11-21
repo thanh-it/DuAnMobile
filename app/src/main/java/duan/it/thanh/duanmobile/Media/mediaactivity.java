@@ -2,17 +2,15 @@ package duan.it.thanh.duanmobile.Media;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
-import duan.it.thanh.duanmobile.MainActivity;
+import duan.it.thanh.duanmobile.mainactivity;
 import duan.it.thanh.duanmobile.R;
 
-public class MediaActivity extends AppCompatActivity {
+public class mediaactivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,27 +25,27 @@ public class MediaActivity extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                startActivity(new Intent(getApplicationContext(),mainactivity.class));
             }
         });
         media_short.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent mediashort = new Intent(MediaActivity.this,MediaShortActivity.class);
+                Intent mediashort = new Intent(mediaactivity.this,mediashortactivity.class);
                 startActivity(mediashort);
             }
         });
         media_relax.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent mediarelax = new Intent(MediaActivity.this,MediaRelaxActivity.class);
+                Intent mediarelax = new Intent(mediaactivity.this,mediarelaxactivity.class);
                 startActivity(mediarelax);
             }
         });
         media_music.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent mediamusic = new Intent(MediaActivity.this,MediaMusicActivity.class);
+                Intent mediamusic = new Intent(mediaactivity.this,mediamusicactivity.class);
                 startActivity(mediamusic);
             }
         });

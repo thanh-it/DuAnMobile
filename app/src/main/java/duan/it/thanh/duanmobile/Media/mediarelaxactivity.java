@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import duan.it.thanh.duanmobile.R;
 
-public class MediaRelaxActivity extends AppCompatActivity {
+public class mediarelaxactivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

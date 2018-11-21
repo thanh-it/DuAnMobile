@@ -12,7 +12,7 @@ import java.io.IOException;
 
 import duan.it.thanh.duanmobile.R;
 
-public class ListOnlineVActivity extends AppCompatActivity {
+public class listonlinevactivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +24,7 @@ public class ListOnlineVActivity extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),OnlineMusicActivity.class));
+                startActivity(new Intent(getApplicationContext(),onlinemusicactivity.class));
             }
         });
         String url = "http://download.monteam.net/testnhac.mp3";

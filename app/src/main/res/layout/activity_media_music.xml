@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Media.MediaMusicActivity">
+    tools:context=".Media.mediamusicactivity">
 
 </android.support.constraint.ConstraintLayout>

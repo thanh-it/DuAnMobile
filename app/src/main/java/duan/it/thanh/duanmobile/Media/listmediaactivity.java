@@ -9,7 +9,7 @@ import android.view.View;
 
 import duan.it.thanh.duanmobile.R;
 
-public class ListMediaActivity extends AppCompatActivity {
+public class listmediaactivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

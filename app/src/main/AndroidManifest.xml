@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".WelcomeActivity"
+            android:name=".welcomeactivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@style/FullscreenTheme">
@@ -24,41 +24,41 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".loginactivity" />
         <activity
-            android:name=".Music.ListMusicActivity"
+            android:name=".Music.listmusicactivity"
             android:label="@string/title_activity_list_music"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Music.ViewMusicActivity"
+            android:name=".Music.viewmusicactivity"
             android:label="@string/title_activity_view_music"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Media.ViewMediaActivity"
+            android:name=".Media.viewmediaactivity"
             android:label="@string/title_activity_type_media"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Media.ListMediaActivity"
+            android:name=".Media.listmediaactivity"
             android:label="@string/title_activity_list_media"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".mainactivity" />
         <activity
-            android:name=".Music.MusicActivity"
+            android:name=".Music.musicactivity"
             android:label="@string/title_activity_music"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".Media.MediaActivity"
+            android:name=".Media.mediaactivity"
             android:label="@string/title_activity_media"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".Music.OnlineMusicActivity"
+            android:name=".Music.onlinemusicactivity"
             android:label="@string/title_activity_online_music"
             android:theme="@style/AppTheme" />
-        <activity android:name=".Music.ListOnlineVActivity" />
-        <activity android:name=".Music.ListOnlineAActivity" />
-        <activity android:name=".Media.MediaShortActivity" />
-        <activity android:name=".Media.MediaRelaxActivity" />
-        <activity android:name=".Media.MediaMusicActivity" />
+        <activity android:name=".Music.listonlinevactivity" />
+        <activity android:name=".Music.listonlineaactivity" />
+        <activity android:name=".Media.mediashortactivity" />
+        <activity android:name=".Media.mediarelaxactivity" />
+        <activity android:name=".Media.mediamusicactivity" />
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
@@ -81,7 +81,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Music.PlayerActivity"
+            android:name=".Music.playeractivity"
             android:label="@string/title_activity_player"
             android:theme="@style/AppTheme" />
         <activity

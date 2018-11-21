@@ -7,40 +7,40 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
+import duan.it.thanh.duanmobile.mainactivity;
 import duan.it.thanh.duanmobile.R;
 
-public class OnlineMusicActivity extends AppCompatActivity {
+public class musicactivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_online_music);
+        setContentView(R.layout.activity_music);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_bakc_24dp);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),MusicActivity.class));
+                startActivity(new Intent(getApplicationContext(),mainactivity.class));
             }
         });
-        Button musicV = findViewById(R.id.musicV);
-        Button musicA = findViewById(R.id.musicA);
-        musicV.setOnClickListener(new View.OnClickListener() {
+        Button show_list = findViewById(R.id.show_list);
+        Button online_music = findViewById(R.id.musicOnline);
+        show_list.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent Viet = new Intent(OnlineMusicActivity.this, ListOnlineVActivity.class);
-                startActivity(Viet);
+                Intent show = new Intent(musicactivity.this, listmusicactivity.class);
+                startActivity(show);
             }
         });
-        musicA.setOnClickListener(new View.OnClickListener() {
+        online_music.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent Anh = new Intent(OnlineMusicActivity.this, ListOnlineAActivity.class);
-                startActivity(Anh);
+                Intent online = new Intent(musicactivity.this,onlinemusicactivity.class);
+                startActivity(online);
             }
         });
-
     }
 
 }
