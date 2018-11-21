@@ -36,7 +36,6 @@ public class ListOnlineAActivity extends AppCompatActivity {
             }
         });
         musica = findViewById(R.id.lv_am);
-        musica = findViewById(R.id.lv_v);
         MusicDAO musicDAO = new MusicDAO(this);
         final List<Music> musicam = musicDAO.getmusicam();
         CustomPr customPr = new CustomPr(this, musicam);

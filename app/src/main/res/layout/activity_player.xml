@@ -24,7 +24,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/viewmusic"
+            android:src="@drawable/disk"
             android:id="@+id/disk_ant"
             android:layout_centerHorizontal="true"/>
         <SeekBar
@@ -48,7 +48,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/btn_play"
-                android:text="play/stop"/>
+                android:text="play"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

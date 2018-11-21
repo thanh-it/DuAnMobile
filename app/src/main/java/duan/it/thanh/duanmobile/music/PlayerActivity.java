@@ -34,6 +34,15 @@ public class PlayerActivity extends AppCompatActivity implements Animation.Anima
         setContentView(R.layout.activity_player);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        toolbar.setNavigationIcon(R.drawable.ic_bakc_24dp);
+        toolbar.setTitle("Đang phát....");
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mMediaPlayer.stop();
+                startActivity(new Intent(getApplicationContext(),ListMusicActivity.class));
+            }
+        });
         ImageView iv_disk = findViewById(R.id.disk_ant);
         Animation animation = AnimationUtils.loadAnimation(this,R.anim.player_disk);
         iv_disk.setAnimation(animation);

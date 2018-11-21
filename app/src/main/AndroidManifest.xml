@@ -34,7 +34,7 @@
             android:label="@string/title_activity_view_music"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".media.ViewMediaActivity"
+            android:name=".media.YoutubeActivity"
             android:label="@string/title_activity_type_media"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
