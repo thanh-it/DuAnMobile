@@ -35,31 +35,31 @@ public class ListOnlineAActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),OnlineMusicActivity.class));
             }
         });
-        musicDAO = new MusicDAO(ListOnlineAActivity.this);
-        musica = findViewById(R.id.lv_am);;
-        final List<Music> musicas = musicDAO.getmusicam();
-        CustomPr customPr = new CustomPr(this,musicas);
+        musica = findViewById(R.id.lv_am);
+        musica = findViewById(R.id.lv_v);
+        MusicDAO musicDAO = new MusicDAO(this);
+        final List<Music> musicam = musicDAO.getmusicam();
+        CustomPr customPr = new CustomPr(this, musicam);
         musica.setAdapter(customPr);
         musica.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startActivity(new Intent(getApplicationContext(),OpenMusicAM.class).putExtra("pos",position));
+                startActivity(new Intent(getApplicationContext(),ListenOnlineActivity.class).putExtra("pos",position).putExtra("typemusic","nhacam"));
             }
         });
     }
-
     class CustomPr extends BaseAdapter
     {
         LayoutInflater inflater;
-        List<Music> musicas;
-        CustomPr(Context context, List<Music> musicam)
+        List<Music> musicam;
+        CustomPr(Context context, List<Music> music)
         {
             inflater = (LayoutInflater)(context.getSystemService(Context.LAYOUT_INFLATER_SERVICE));
-            musicas = musicam;
+            musicam = music;
         }
         @Override
         public int getCount() {
-            return musicas.size();
+            return musicam.size();
         }
 
         @Override
@@ -74,13 +74,13 @@ public class ListOnlineAActivity extends AppCompatActivity {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            View v =  inflater.inflate(R.layout.custom_music,null);
-            TextView stt = v.findViewById(R.id.idms);
-            TextView name = v.findViewById(R.id.name);
-            String mstt = String.valueOf(musicas.get(position).getId());
-            stt.setText(mstt);
-            name.setText(musicas.get(position).getName());
-            return v;
+            View view =  inflater.inflate(R.layout.custom_music,null);
+            TextView stt = view.findViewById(R.id.idms);
+            String idshow = String.valueOf(musicam.get(position).getId());
+            stt.setText(idshow);
+            TextView name = view.findViewById(R.id.name);
+            name.setText(musicam.get(position).getName());
+            return view;
         }
     }
 }

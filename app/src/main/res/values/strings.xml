@@ -15,4 +15,5 @@
     <string name="fb_login_protocol_scheme">fb1967979516622090</string>
     <string name="title_activity_player">PlayerActivity</string>
     <string name="title_activity_open_music_am">open_music_am</string>
+    <string name="title_activity_listen_online">ListenOnlineActivity</string>
 </resources>

@@ -85,8 +85,8 @@
             android:label="@string/title_activity_player"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".music.OpenMusicAM"
-            android:label="@string/title_activity_open_music_am"
+            android:name=".music.ListenOnlineActivity"
+            android:label="@string/title_activity_listen_online"
             android:theme="@style/AppTheme"></activity>
     </application>
 
