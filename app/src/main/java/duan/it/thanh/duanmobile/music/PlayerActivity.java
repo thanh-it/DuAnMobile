@@ -12,6 +12,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SeekBar;
+import android.widget.TextView;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -26,6 +27,7 @@ public class PlayerActivity extends AppCompatActivity implements Animation.Anima
     Thread update_th;
     int position;
     Uri u;
+    TextView title;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,11 +37,11 @@ public class PlayerActivity extends AppCompatActivity implements Animation.Anima
         ImageView iv_disk = findViewById(R.id.disk_ant);
         Animation animation = AnimationUtils.loadAnimation(this,R.anim.player_disk);
         iv_disk.setAnimation(animation);
-        animation.setAnimationListener(this);
         next = findViewById(R.id.btn_next);
         prev = findViewById(R.id.btn_prev);
         play = findViewById(R.id.btn_play);
         sb = (SeekBar) findViewById(R.id.seek_bar);
+        title = findViewById(R.id.title);
         update_th = new Thread(){
             @Override
             public void run() {
@@ -67,6 +69,7 @@ public class PlayerActivity extends AppCompatActivity implements Animation.Anima
         position = b.getInt("pos",0);
         u = Uri.parse(mySongs.get(position).toString());
         mMediaPlayer = MediaPlayer.create(getApplicationContext(),u);
+        title.setText(mySongs.get(position).getName());
         mMediaPlayer.start();
         update_th.start();
         next.setOnClickListener(new View.OnClickListener() {
@@ -77,6 +80,7 @@ public class PlayerActivity extends AppCompatActivity implements Animation.Anima
                 position = (position+1)%mySongs.size();
                 u = Uri.parse(mySongs.get(position).toString());
                 mMediaPlayer = MediaPlayer.create(getApplicationContext(),u);
+                title.setText(mySongs.get(position).getName());
                 mMediaPlayer.start();
             }
         });
@@ -93,6 +97,7 @@ public class PlayerActivity extends AppCompatActivity implements Animation.Anima
 //                }
                 u = Uri.parse(mySongs.get(position).toString());
                 mMediaPlayer = MediaPlayer.create(getApplicationContext(),u);
+                title.setText(mySongs.get(position).getName());
                 mMediaPlayer.start();
             }
         });

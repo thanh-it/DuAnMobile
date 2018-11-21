@@ -1,6 +1,10 @@
 package duan.it.thanh.duanmobile;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -20,8 +24,19 @@ public class MainActivity extends AppCompatActivity {
         btn_music.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent music = new Intent(MainActivity.this, MusicActivity.class);
-                startActivity(music);
+                if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE)
+                        != PackageManager.PERMISSION_GRANTED) {
+                    // Permission is not granted
+                    ActivityCompat.requestPermissions(MainActivity.this,
+                            new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                            997);
+
+                } else {
+                    Intent music = new Intent(MainActivity.this, MusicActivity.class);
+                    startActivity(music);
+
+                }
+
             }
         });
         btn_media.setOnClickListener(new View.OnClickListener() {
