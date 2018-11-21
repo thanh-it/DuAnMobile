@@ -1,31 +1,24 @@
-package duan.it.thanh.duanmobile.Music;
+package duan.it.thanh.duanmobile.music;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
-import android.provider.MediaStore;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 
 import duan.it.thanh.duanmobile.R;
 
-public class playeractivity extends AppCompatActivity implements Animation.AnimationListener {
+public class PlayerActivity extends AppCompatActivity implements Animation.AnimationListener {
     private MediaPlayer mMediaPlayer;
     ArrayList<File> mySongs;
     Button next, prev, play;

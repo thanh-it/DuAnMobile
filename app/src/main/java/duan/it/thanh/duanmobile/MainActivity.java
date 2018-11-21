@@ -6,10 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import duan.it.thanh.duanmobile.Media.mediaactivity;
-import duan.it.thanh.duanmobile.Music.musicactivity;
+import duan.it.thanh.duanmobile.media.MediaActivity;
+import duan.it.thanh.duanmobile.music.MusicActivity;
 
-public class mainactivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,14 +20,14 @@ public class mainactivity extends AppCompatActivity {
         btn_music.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent music = new Intent(mainactivity.this, musicactivity.class);
+                Intent music = new Intent(MainActivity.this, MusicActivity.class);
                 startActivity(music);
             }
         });
         btn_media.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent media = new Intent(mainactivity.this, mediaactivity.class);
+                Intent media = new Intent(MainActivity.this, MediaActivity.class);
                 startActivity(media);
             }
         });

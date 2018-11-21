@@ -1,4 +1,4 @@
-package duan.it.thanh.duanmobile.Music;
+package duan.it.thanh.duanmobile.music;
 
 import android.content.Context;
 import android.content.Intent;
@@ -16,12 +16,12 @@ import android.widget.TextView;
 import java.util.List;
 
 import duan.it.thanh.duanmobile.R;
-import duan.it.thanh.duanmobile.dbdao.musicdao;
-import duan.it.thanh.duanmobile.model.music;
+import duan.it.thanh.duanmobile.dbdao.MusicDAO;
+import duan.it.thanh.duanmobile.model.Music;
 
-public class listonlineaactivity extends AppCompatActivity {
+public class ListOnlineAActivity extends AppCompatActivity {
     ListView musica;
-    musicdao musicDAO;
+    MusicDAO musicDAO;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,18 +32,18 @@ public class listonlineaactivity extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),onlinemusicactivity.class));
+                startActivity(new Intent(getApplicationContext(),OnlineMusicActivity.class));
             }
         });
-        musicDAO = new musicdao(listonlineaactivity.this);
+        musicDAO = new MusicDAO(ListOnlineAActivity.this);
         musica = findViewById(R.id.lv_am);;
-        final List<music> musicas = musicDAO.getmusicam();
+        final List<Music> musicas = musicDAO.getmusicam();
         CustomPr customPr = new CustomPr(this,musicas);
         musica.setAdapter(customPr);
         musica.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startActivity(new Intent(getApplicationContext(),open_music_am.class).putExtra("pos",position));
+                startActivity(new Intent(getApplicationContext(),OpenMusicAM.class).putExtra("pos",position));
             }
         });
     }
@@ -51,8 +51,8 @@ public class listonlineaactivity extends AppCompatActivity {
     class CustomPr extends BaseAdapter
     {
         LayoutInflater inflater;
-        List<music> musicas;
-        CustomPr(Context context, List<music> musicam)
+        List<Music> musicas;
+        CustomPr(Context context, List<Music> musicam)
         {
             inflater = (LayoutInflater)(context.getSystemService(Context.LAYOUT_INFLATER_SERVICE));
             musicas = musicam;

@@ -1,4 +1,4 @@
-package duan.it.thanh.duanmobile.Media;
+package duan.it.thanh.duanmobile.media;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -6,7 +6,7 @@ import android.support.v7.widget.Toolbar;
 
 import duan.it.thanh.duanmobile.R;
 
-public class viewmediaactivity extends AppCompatActivity {
+public class ViewMediaActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

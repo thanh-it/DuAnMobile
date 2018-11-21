@@ -11,7 +11,7 @@ import java.util.TimerTask;
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
-public class welcomeactivity extends AppCompatActivity {
+public class WelcomeActivity extends AppCompatActivity {
         @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,7 +22,7 @@ public class welcomeactivity extends AppCompatActivity {
         }
     class MyTimerTask extends TimerTask {
         public void run() {
-            Intent intent = new Intent(getApplicationContext(),loginactivity.class);
+            Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
             startActivity(intent);
             finish();
         }

@@ -1,15 +1,12 @@
-package duan.it.thanh.duanmobile.Music;
+package duan.it.thanh.duanmobile.music;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 
 import duan.it.thanh.duanmobile.R;
 
-public class viewmusicactivity extends AppCompatActivity {
+public class ViewMusicActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

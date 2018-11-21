@@ -1,4 +1,4 @@
-package duan.it.thanh.duanmobile.Music;
+package duan.it.thanh.duanmobile.music;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,7 +9,7 @@ import android.widget.Button;
 
 import duan.it.thanh.duanmobile.R;
 
-public class onlinemusicactivity extends AppCompatActivity {
+public class OnlineMusicActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +21,7 @@ public class onlinemusicactivity extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),musicactivity.class));
+                startActivity(new Intent(getApplicationContext(),MusicActivity.class));
             }
         });
         Button musicV = findViewById(R.id.musicV);
@@ -29,14 +29,14 @@ public class onlinemusicactivity extends AppCompatActivity {
         musicV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent Viet = new Intent(onlinemusicactivity.this, listonlinevactivity.class);
+                Intent Viet = new Intent(OnlineMusicActivity.this, ListOnlineVActivity.class);
                 startActivity(Viet);
             }
         });
         musicA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent Anh = new Intent(onlinemusicactivity.this, listonlineaactivity.class);
+                Intent Anh = new Intent(OnlineMusicActivity.this, ListOnlineAActivity.class);
                 startActivity(Anh);
             }
         });

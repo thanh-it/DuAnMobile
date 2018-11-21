@@ -1,15 +1,11 @@
-package duan.it.thanh.duanmobile.Media;
+package duan.it.thanh.duanmobile.media;
 
-import android.media.AudioManager;
-import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import java.io.IOException;
-
 import duan.it.thanh.duanmobile.R;
 
-public class mediashortactivity extends AppCompatActivity {
+public class MediaShortActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

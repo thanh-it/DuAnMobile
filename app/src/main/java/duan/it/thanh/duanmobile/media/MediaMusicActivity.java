@@ -1,11 +1,11 @@
-package duan.it.thanh.duanmobile.Media;
+package duan.it.thanh.duanmobile.media;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import duan.it.thanh.duanmobile.R;
 
-public class mediamusicactivity extends AppCompatActivity {
+public class MediaMusicActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

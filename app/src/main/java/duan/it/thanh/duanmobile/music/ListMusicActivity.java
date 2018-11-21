@@ -1,4 +1,4 @@
-package duan.it.thanh.duanmobile.Music;
+package duan.it.thanh.duanmobile.music;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 import duan.it.thanh.duanmobile.R;
 
-public class listmusicactivity extends AppCompatActivity {
+public class ListMusicActivity extends AppCompatActivity {
 
     ListView lv;
     String[] items;
@@ -30,7 +30,7 @@ public class listmusicactivity extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),musicactivity.class));
+                startActivity(new Intent(getApplicationContext(),MusicActivity.class));
             }
         });
         lv = findViewById(R.id.listmusicof);
@@ -44,7 +44,7 @@ public class listmusicactivity extends AppCompatActivity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startActivity(new Intent(getApplicationContext(),playeractivity.class).putExtra("pos",position).putExtra("songList",mySongs));
+                startActivity(new Intent(getApplicationContext(),PlayerActivity.class).putExtra("pos",position).putExtra("songList",mySongs));
             }
         });
 

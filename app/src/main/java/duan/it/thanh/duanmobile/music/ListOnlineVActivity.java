@@ -1,4 +1,4 @@
-package duan.it.thanh.duanmobile.Music;
+package duan.it.thanh.duanmobile.music;
 
 import android.content.Intent;
 import android.media.AudioManager;
@@ -12,7 +12,7 @@ import java.io.IOException;
 
 import duan.it.thanh.duanmobile.R;
 
-public class listonlinevactivity extends AppCompatActivity {
+public class ListOnlineVActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +24,7 @@ public class listonlinevactivity extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),onlinemusicactivity.class));
+                startActivity(new Intent(getApplicationContext(),OnlineMusicActivity.class));
             }
         });
         String url = "http://download.monteam.net/testnhac.mp3";

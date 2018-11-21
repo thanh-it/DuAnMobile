@@ -29,14 +29,14 @@ import com.google.android.gms.common.api.OptionalPendingResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 
-public class loginactivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
+public class LoginActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
     private GoogleApiClient mGoogleApiClient;
     private TextView mStatusTextView;
     private ProgressDialog mProgressDialog;
     CallbackManager callbackManager;
     private LoginButton FbLogin;
     private AccessToken mAccessToken;
-    private static final String TAG = "loginactivity";
+    private static final String TAG = "LoginActivity";
     private static final int RC_SIGN_IN = 9001;
     private static final int RC_FB_IN = 8001;
     @Override
@@ -51,8 +51,8 @@ public class loginactivity extends AppCompatActivity implements GoogleApiClient.
             @Override
             public void onClick(View v) {
                 GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
-                mGoogleApiClient = new GoogleApiClient.Builder(loginactivity.this)
-                        .enableAutoManage(loginactivity.this /* FragmentActivity */, loginactivity.this /* OnConnectionFailedListener */)
+                mGoogleApiClient = new GoogleApiClient.Builder(LoginActivity.this)
+                        .enableAutoManage(LoginActivity.this /* FragmentActivity */, LoginActivity.this /* OnConnectionFailedListener */)
                         .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                         .build();
                 OptionalPendingResult<GoogleSignInResult> opr = Auth.GoogleSignInApi.silentSignIn(mGoogleApiClient);
@@ -81,20 +81,20 @@ public class loginactivity extends AppCompatActivity implements GoogleApiClient.
 
             @Override
             public void onSuccess(LoginResult loginResult) {
-                Intent intent = new Intent(loginactivity.this,mainactivity.class);
+                Intent intent = new Intent(LoginActivity.this,MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
-                Toast.makeText(loginactivity.this,"Welcome to App Thanh-IT", Toast.LENGTH_LONG).show();
+                Toast.makeText(LoginActivity.this,"Welcome to App Thanh-IT", Toast.LENGTH_LONG).show();
                 finish();
                 LoginManager.getInstance().logOut();
             }
             @Override
             public void onCancel() {
-                Toast.makeText(loginactivity.this,"Login attempt canceled.", Toast.LENGTH_LONG).show();
+                Toast.makeText(LoginActivity.this,"Login attempt canceled.", Toast.LENGTH_LONG).show();
             }
             @Override
             public void onError(FacebookException e) {
-                Toast.makeText(loginactivity.this,"Login attempt failed.", Toast.LENGTH_LONG).show();
+                Toast.makeText(LoginActivity.this,"Login attempt failed.", Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -109,9 +109,9 @@ public class loginactivity extends AppCompatActivity implements GoogleApiClient.
         if (requestCode == RC_SIGN_IN) {
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
             handleSignInResult(result);
-            Intent i = new Intent(loginactivity.this,mainactivity.class);
+            Intent i = new Intent(LoginActivity.this,MainActivity.class);
             startActivity(i);
-            Toast.makeText(loginactivity.this,"Welcome to App Thanh-IT", Toast.LENGTH_LONG).show();
+            Toast.makeText(LoginActivity.this,"Welcome to App Thanh-IT", Toast.LENGTH_LONG).show();
             finish();
         }
         callbackManager.onActivityResult(requestCode, resultCode, data);
