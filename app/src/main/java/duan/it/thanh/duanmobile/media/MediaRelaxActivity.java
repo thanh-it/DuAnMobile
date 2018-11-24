@@ -1,5 +1,6 @@
 package duan.it.thanh.duanmobile.media;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import duan.it.thanh.duanmobile.R;
 public class MediaRelaxActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     Vector<YoutubeActivity> youtubeActivities = new Vector<>();
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,17 +28,23 @@ public class MediaRelaxActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),MediaActivity.class));
-                recyclerView.setAdapter(null);
+                youtubeActivities.clear();
             }
         });
-        recyclerView = findViewById(R.id.lv_media_music);
+        recyclerView = findViewById(R.id.lv_media_relax);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        youtubeActivities.add(new YoutubeActivity("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/VDgDjlXFPPo\" frameborder=\"0\" allow=\"accelerometer; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"));
-        youtubeActivities.add(new YoutubeActivity("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/NgNE9ORkDtY\" frameborder=\"0\" allow=\"accelerometer; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"));
-        youtubeActivities.add(new YoutubeActivity("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/fE5Rh4Dwk7s\" frameborder=\"0\" allow=\"accelerometer; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"));
+        youtubeActivities.clear();
+        youtubeActivities.add(new YoutubeActivity("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/lpjrT99ds88\" frameborder=\"0\" allow=\"accelerometer; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"));
+        youtubeActivities.add(new YoutubeActivity("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/rBtUOHo2Ayw\" frameborder=\"0\" allow=\"accelerometer; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"));
+        youtubeActivities.add(new YoutubeActivity("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/B8SxgpIOu18\" frameborder=\"0\" allow=\"accelerometer; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"));
+        youtubeActivities.add(new YoutubeActivity("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/eDpdQUM8WuA\" frameborder=\"0\" allow=\"accelerometer; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"));
+        youtubeActivities.add(new YoutubeActivity("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/NH7tV0Pvdz4\" frameborder=\"0\" allow=\"accelerometer; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"));
+        youtubeActivities.add(new YoutubeActivity("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/-4YcSQlS1gw\" frameborder=\"0\" allow=\"accelerometer; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"));
+        youtubeActivities.add(new YoutubeActivity("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/zwoTa2AyLNI\" frameborder=\"0\" allow=\"accelerometer; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"));
+        youtubeActivities.add(new YoutubeActivity("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/cZJJsgJyMZs\" frameborder=\"0\" allow=\"accelerometer; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"));
+        youtubeActivities.add(new YoutubeActivity("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/ME6znbdq6G4\" frameborder=\"0\" allow=\"accelerometer; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"));
         VideoAdapter videoAdapter = new VideoAdapter(youtubeActivities);
-        recyclerView.setAdapter(null);
         recyclerView.setAdapter(videoAdapter);
     }
 }

@@ -7,7 +7,26 @@ import android.support.v7.widget.Toolbar;
 import duan.it.thanh.duanmobile.R;
 
 public class YoutubeActivity {
-    String VideoUrl;
+    public String VideoUrl;
+    public String type;
+    public int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     public YoutubeActivity(){
 
     }
