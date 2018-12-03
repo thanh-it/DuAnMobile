@@ -18,10 +18,12 @@ public class OnlineMusicActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_bakc_24dp);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Thể loại nhạc Online");
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),MusicActivity.class));
+                finish();
             }
         });
         Button musicV = findViewById(R.id.musicV);

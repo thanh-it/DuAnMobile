@@ -2,6 +2,7 @@ package duan.it.thanh.duanmobile.music;
 
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -21,7 +22,6 @@ import duan.it.thanh.duanmobile.model.Music;
 
 public class ListOnlineAActivity extends AppCompatActivity {
     ListView musica;
-    MusicDAO musicDAO;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,10 +29,12 @@ public class ListOnlineAActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_bakc_24dp);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Danh sách nhạc ÂU - MỸ");
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),OnlineMusicActivity.class));
+                finish();
             }
         });
         musica = findViewById(R.id.lv_am);
@@ -74,9 +76,6 @@ public class ListOnlineAActivity extends AppCompatActivity {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             View view =  inflater.inflate(R.layout.custom_music,null);
-            TextView stt = view.findViewById(R.id.idms);
-            String idshow = String.valueOf(musicam.get(position).getId());
-            stt.setText(idshow);
             TextView name = view.findViewById(R.id.name);
             name.setText(musicam.get(position).getName());
             return view;

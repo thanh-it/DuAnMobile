@@ -7,14 +7,14 @@ import android.database.sqlite.SQLiteDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
-import duan.it.thanh.duanmobile.datamusicmedia.DataBase;
+import duan.it.thanh.duanmobile.datamusicmedia.DB;
 import duan.it.thanh.duanmobile.media.YoutubeActivity;
 
 public class MediaDAO {
     private SQLiteDatabase db;
-    private DataBase dbql;
+    private DB dbql;
     public MediaDAO(Context context){
-        dbql = new DataBase(context);
+        dbql = new DB(context);
         db = dbql.getWritableDatabase();
     }
     public List<YoutubeActivity> getPr(String sql, String...selectionArgs){

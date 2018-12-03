@@ -1,8 +1,10 @@
 package duan.it.thanh.duanmobile;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Button btn_music = findViewById(R.id.btn_music);
         Button btn_media = findViewById(R.id.btn_media);
+
         btn_music.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,5 +49,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(media);
             }
         });
+
     }
 }

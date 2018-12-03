@@ -36,19 +36,22 @@
             android:layout_centerInParent="true"
             android:layout_height="wrap_content">
             <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Phim ngắn"
+                android:layout_width="300dp"
+                android:layout_height="100dp"
+                android:background="@drawable/short_media"
+                android:layout_gravity="center"
                 android:id="@+id/mediaShort" />
             <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Phim hài hước"
+                android:layout_width="300dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:background="@drawable/relax_media"
                 android:id="@+id/mediaRelax" />
             <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Phim ca nhạc"
+                android:layout_width="300dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:background="@drawable/music_media"
                 android:id="@+id/mediaMusic"/>
         </LinearLayout>
     </RelativeLayout>

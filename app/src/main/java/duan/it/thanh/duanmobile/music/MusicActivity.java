@@ -19,10 +19,12 @@ public class MusicActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_bakc_24dp);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Nghe nhạc");
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                finish();
             }
         });
         Button show_list = findViewById(R.id.show_list);

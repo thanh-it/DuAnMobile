@@ -6,14 +6,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="id"
-        android:layout_weight="10"
-        android:gravity="center"
-        android:id="@+id/idms"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:text="name"
+        android:textSize="20dp"
         android:layout_weight="1"
         android:id="@+id/name"/>
 </LinearLayout>

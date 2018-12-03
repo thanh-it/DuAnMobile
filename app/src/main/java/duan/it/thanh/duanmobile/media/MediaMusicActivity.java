@@ -29,10 +29,12 @@ public class MediaMusicActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_bakc_24dp);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Nhạc phim");
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),MediaActivity.class));
+                finish();
                 youtubeActivities.clear();
             }
         });

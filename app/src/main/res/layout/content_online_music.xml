@@ -13,17 +13,22 @@
         android:layout_height="wrap_content"
         android:id="@+id/title"
         android:layout_centerHorizontal="true"
+        android:textSize="30dp"
         android:text="Nghe nhạc online"/>
     <Button
         android:layout_width="match_parent"
         android:layout_below="@+id/title"
+        android:layout_marginTop="50dp"
         android:id="@+id/musicV"
         android:text="Nhạc Việt"
+        android:background="@drawable/bannerviet"
         android:layout_height="wrap_content" />
     <Button
         android:layout_width="match_parent"
         android:layout_below="@+id/musicV"
         android:id="@+id/musicA"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bannerny"
         android:text="Nhạc Âu - Mỹ"
         android:layout_height="wrap_content" />
 </RelativeLayout>

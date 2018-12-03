@@ -24,10 +24,12 @@ public class MediaRelaxActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_bakc_24dp);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Phim thư giãn");
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),MediaActivity.class));
+                finish();
                 youtubeActivities.clear();
             }
         });

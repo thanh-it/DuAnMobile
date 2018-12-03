@@ -25,7 +25,15 @@ public class MediaActivity extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                finish();
+            }
+        });
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Thể loại Phim");
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
         media_short.setOnClickListener(new View.OnClickListener() {

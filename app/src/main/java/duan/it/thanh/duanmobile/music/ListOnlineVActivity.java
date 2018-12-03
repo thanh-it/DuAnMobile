@@ -32,10 +32,12 @@ ListView lv_V;
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_bakc_24dp);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Danh sách nhạc Việt");
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),OnlineMusicActivity.class));
+                finish();
             }
         });
         lv_V = findViewById(R.id.lv_v);
@@ -77,9 +79,6 @@ ListView lv_V;
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             View view =  inflater.inflate(R.layout.custom_music,null);
-            TextView stt = view.findViewById(R.id.idms);
-            String idshow = String.valueOf(musics.get(position).getId());
-            stt.setText(idshow);
             TextView name = view.findViewById(R.id.name);
             name.setText(musics.get(position).getName());
             return view;

@@ -30,16 +30,8 @@
             android:label="@string/title_activity_list_music"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".music.ViewMusicActivity"
-            android:label="@string/title_activity_view_music"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".media.YoutubeActivity"
             android:label="@string/title_activity_type_media"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".media.ListMediaActivity"
-            android:label="@string/title_activity_list_media"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity" />
         <activity
