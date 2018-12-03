@@ -106,6 +106,7 @@ public class ListenOnlineActivity extends AppCompatActivity implements Animation
                 }
             };
             u = Uri.parse(musics.get(position).getLink());
+            title.setText(musics.get(position).getName());
             mMediaPlayer = MediaPlayer.create(getApplicationContext(),u);
             mMediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
                 @Override
@@ -158,6 +159,7 @@ public class ListenOnlineActivity extends AppCompatActivity implements Animation
             MusicDAO musicDAO = new MusicDAO(this);
             final List<Music> musicam = musicDAO.getmusicam();
             mMediaPlayer = new MediaPlayer();
+
             mMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
             update_th = new Thread(){
                 @Override
@@ -182,6 +184,7 @@ public class ListenOnlineActivity extends AppCompatActivity implements Animation
             };
 
             u = Uri.parse(musicam.get(position).getLink());
+            title.setText(musicam.get(position).getName());
             mMediaPlayer = MediaPlayer.create(getApplicationContext(),u);
             mMediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
                 @Override
