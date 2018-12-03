@@ -14,47 +14,55 @@
         app:popupTheme="@style/AppTheme.PopupOverlay" />
     <TextView
         android:layout_width="match_parent"
+        android:layout_below="@id/toolbar"
         android:layout_height="wrap_content"
-        android:id="@+id/title"
-        android:layout_below="@id/toolbar"/>
+        android:id="@+id/title" />
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_below="@id/title"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/disk"
-            android:id="@+id/disk_ant"
-            android:layout_centerHorizontal="true"/>
-        <SeekBar
+        android:layout_centerInParent="true"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/seek_bar"
-            android:layout_below="@+id/disk_ant"
-            android:layout_marginTop="30dp"/>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@id/seek_bar"
-            android:layout_marginTop="30dp">
-            <Button
+            android:layout_centerInParent="true"
+            android:layout_height="wrap_content">
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/btn_prev"
-                android:text="back"/>
-            <Button
+                android:src="@drawable/disk"
+                android:id="@+id/disk_ant"
+                android:layout_centerHorizontal="true"/>
+            <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/seek_bar"
+                android:layout_below="@+id/disk_ant"
+                android:layout_marginTop="30dp"/>
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/btn_play"
-                android:text="play"/>
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/btn_next"
-                android:text="next"/>
-        </LinearLayout>
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/seek_bar"
+                android:layout_marginTop="30dp">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_prev"
+                    android:text="back"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_play"
+                    android:text="play"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_next"
+                    android:text="next"/>
+            </LinearLayout>
+    </RelativeLayout>
+
     </RelativeLayout>
 
 
